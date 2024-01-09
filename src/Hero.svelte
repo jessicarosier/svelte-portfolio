@@ -23,12 +23,12 @@
 </script>
 
 
-<div class="about-me-container d-flex flex-row flex-xl-column justify-content-center align-items-center">
-  <div class="d-flex flex-column align-items-center">
+<div class="about-me-container d-flex flex-column flex-xl-row justify-content-center align-items-center gap-5">
+  <div class="d-flex flex-column align-items-center aboutMeText">
     <span> Hi <span class="wave">👋🏼</span>, I'm</span>
     Jessica Rosier
     {#if aboutMe}
-      <p class="aboutMe__container__text__p">
+      <p>
         {#if aboutMe[counter]}<span>{aboutMe[counter]}</span>{/if}
       </p>
     {/if  }
@@ -48,7 +48,6 @@
 
     .about-me-container {
         height: 100vh;
-        width: 100%;
         background-color: #f5f5f5;
         font-family: var(--font);
         text-transform: uppercase;
@@ -56,7 +55,18 @@
         font-weight: 600;
         color: #333;
         text-align: center;
-        padding: 0 1rem;
+    }
+
+    .aboutMeText {
+        font-size: 50px;
+
+        & p {
+            width: 800px;
+
+            @media (max-width: 768px) {
+                width: 100%;
+            }
+        }
     }
 
     .headshot-wrapper {
