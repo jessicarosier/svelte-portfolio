@@ -142,12 +142,12 @@
             font-family: var(--sec-font);
             color: var(--light-purple);
             cursor: pointer;
-            border: none;
+            border: 1px solid var(--light-purple);
+            border-radius: 5px;
         }
 
         & button:focus {
-            border: 2px solid var(--light-purple);
-            border-radius: 5px;
+            border: 3px solid var(--light-purple);
         }
 
 
@@ -163,6 +163,10 @@
         justify-content: center;
         align-items: center;
         width: 50%;
+
+        @media (max-width: 768px) {
+            width: 80%;
+        }
     }
 
     .project-title {

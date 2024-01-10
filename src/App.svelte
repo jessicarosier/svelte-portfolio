@@ -3,6 +3,7 @@
     import Hero from "./Hero.svelte";
     import Projects from "./Projects.svelte";
     import Certifications from "./Certifications.svelte";
+    import Skills from "./Skills.svelte";
 
 
 </script>
@@ -19,6 +20,8 @@
     <Projects />
 
     <Certifications />
+
+  <Skills />
 
 
 
