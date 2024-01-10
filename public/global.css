@@ -17,6 +17,10 @@
 	box-sizing: border-box;
 }
 
+body {
+	
+}
+
 html {
 	box-sizing: border-box;
 }
@@ -31,19 +35,9 @@ html {
 	flex: 1;
 }
 
-
-
 a {
 	text-decoration: none;
-	color: #000;
-}
-
-a:hover {
-	text-decoration: underline;
-}
-
-a:visited {
-	color: rgb(0,80,160);
+	color: inherit;
 }
 
 label {

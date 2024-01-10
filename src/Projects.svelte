@@ -1,11 +1,23 @@
 <script>
-    import {fade, blur, fly, slide} from "svelte/transition";
+    import {fade, blur, fly, slide,scale, crossfade} from "svelte/transition";
     import {tweened} from "svelte/motion";
     import {flip} from "svelte/animate"; //must be used in for each block
-    import {quintOut} from "svelte/easing";
+    import {
+        quintOut,
+        backInOut,
+        backOut,
+        backIn,
+        cubicOut,
+        cubicIn,
+        cubicInOut,
+        sineInOut,
+        expoInOut,
+        bounceInOut,
+        linear
+    } from "svelte/easing";
     import {transition_in} from "svelte/internal";
 
-    let activeIndex = 0;
+    export let activeIndex = 0;
     const projects = [
         {
             name: "Favorite Movies App",
@@ -50,7 +62,7 @@
         }
     ];
 
-    function handleNext() {
+    export function handleNext() {
         if (activeIndex === projects.length - 1) {
             activeIndex = 0;
         } else {
@@ -59,7 +71,7 @@
 
     }
 
-    function handlePrev() {
+    export function handlePrev() {
         if (activeIndex === 0) {
             activeIndex = projects.length - 1;
         } else {
@@ -69,33 +81,36 @@
 </script>
 
 
-<div class="about-me-container flex-column justify-content-center align-items-center gap-5">
-  <div class="increment-projects">
-  <button on:click={() => handlePrev()}
-   disabled={activeIndex === 0}>
-    <span class="material-icons" style="font-size: 100px">navigate_before</span>
-  </button>
-  <img src="{projects[activeIndex].img}" alt="{projects[activeIndex].alt}" class="project-img">
-  <button on:click={() => handleNext()} disabled={activeIndex === projects.length - 1}>
-    <span class="material-icons" style="font-size: 100px">navigate_next</span>
-  </button>
-  </div>
-  <div class="project-info">
-    <h3 class="project-title">{projects[activeIndex].name}</h3>
-    <p class="project-description">{projects[activeIndex].description}</p>
-    <div class="project-links">
-      <a class="button" href="{projects[activeIndex].github}" target="_blank">
-        GitHub
-        <span class="material-icons">launch</span>
-      </a>
-      {#if projects[activeIndex].liveSite}
-        <a class="button" href="{projects[activeIndex].liveSite}" target="_blank">
-          Live Site
-          <span class="material-icons">launch</span></a>
-      {/if}
+
+    <div class="about-me-container flex-column justify-content-center align-items-center gap-5">
+      <div class="increment-projects">
+        <button on:click={handlePrev}>
+          <span class="material-icons">arrow_back_ios</span>
+        </button>
+        {#key activeIndex}
+        <img in:fade out:slide src="{projects[activeIndex].img}" alt="{projects[activeIndex].alt}" class="project-img">
+        {/key}
+        <button on:click={handleNext}>
+          <span class="material-icons">arrow_forward_ios</span>
+        </button>
+      </div>
+      <div class="project-info">
+        <h3 class="project-title">{projects[activeIndex].name}</h3>
+        <p class="project-description">{projects[activeIndex].description}</p>
+        <div class="project-links">
+          <a class="button" href="{projects[activeIndex].github}" target="_blank">
+            GitHub
+            <span class="material-icons">launch</span>
+          </a>
+          {#if projects[activeIndex].liveSite}
+            <a class="button" href="{projects[activeIndex].liveSite}" target="_blank">
+              Live Site
+              <span class="material-icons">launch</span></a>
+          {/if}
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+
 
 
 
@@ -114,6 +129,10 @@
         align-items: center;
         gap: 1rem;
 
+        & img {
+            transition: all 0.5s ease;
+        }
+
         & button {
             display: flex;
             justify-content: center;
@@ -131,10 +150,6 @@
             border-radius: 5px;
         }
 
-        & button:disabled {
-            color: var(--light-gray);
-            cursor: not-allowed;
-        }
 
         & img {
             width: 50%;

@@ -3,6 +3,8 @@
     import Hero from "./Hero.svelte";
     import Projects from "./Projects.svelte";
     import Certifications from "./Certifications.svelte";
+
+
 </script>
 
 <main class="page-wrapper">
@@ -13,13 +15,13 @@
 
   </div>
 
-  <div class="projects-wrapper">
-    <Projects/>
-  </div>
 
-  <div class="certifications-wrapper">
-    <Certifications/>
-  </div>
+    <Projects />
+
+    <Certifications />
+
+
+
 
 
 </main>

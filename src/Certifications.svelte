@@ -1,4 +1,5 @@
 <script>
+    import {flip} from "svelte/animate";
     const certifications = [
         {
             name: "Securtiy+",
@@ -109,15 +110,22 @@
 
 
 </script>
-
+<div class="cert-wrapper">
 {#each certifications as cert}
 <div class="cert-card">
   <img class="cert-img" src={cert.img} alt={cert.name} />
   <a class="cert-overlay" href={cert.link} target="_blank">View Certificate</a>
 </div>
 {/each}
+</div>
 
 <style>
+    .cert-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     .cert-card {
         margin: 20px;
         padding: 20px;
@@ -136,7 +144,7 @@
 
 
         & .cert-img {
-            width: 500px;
+            width: 200px;
             aspect-ratio: 1/1;
             object-fit: contain;
 
