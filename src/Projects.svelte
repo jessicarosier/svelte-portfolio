@@ -1,4 +1,11 @@
 <script>
+    import {fade, blur, fly, slide} from "svelte/transition";
+    import {tweened} from "svelte/motion";
+    import {flip} from "svelte/animate"; //must be used in for each block
+    import {quintOut} from "svelte/easing";
+    import {transition_in} from "svelte/internal";
+
+    let activeIndex = 0;
     const projects = [
         {
             name: "Favorite Movies App",
@@ -43,27 +50,141 @@
         }
     ];
 
+    function handleNext() {
+        if (activeIndex === projects.length - 1) {
+            activeIndex = 0;
+        } else {
+            activeIndex++;
+        }
+
+    }
+
+    function handlePrev() {
+        if (activeIndex === 0) {
+            activeIndex = projects.length - 1;
+        } else {
+            activeIndex--;
+        }
+    }
 </script>
 
+
 <div class="about-me-container flex-column justify-content-center align-items-center gap-5">
-  {#each projects as project}
-    <img src="{project.img}" alt="{project.alt}" class="project-img">
-    <div class="project-info">
-      <h3 class="project-title">{project.name}</h3>
-      <p class="project-description">{project.description}</p>
-      <div class="project-links">
-        <a class="button" href="{project.github}" target="_blank">GitHub</a>
-        {#if project.liveSite}
-          <a class="button" href="{project.liveSite}" target="_blank">Live Site</a>
-        {/if}
-
-      </div>
-      </div>
-  {/each}
-
+  <div class="increment-projects">
+  <button on:click={() => handlePrev()}
+   disabled={activeIndex === 0}>
+    <span class="material-icons" style="font-size: 100px">navigate_before</span>
+  </button>
+  <img src="{projects[activeIndex].img}" alt="{projects[activeIndex].alt}" class="project-img">
+  <button on:click={() => handleNext()} disabled={activeIndex === projects.length - 1}>
+    <span class="material-icons" style="font-size: 100px">navigate_next</span>
+  </button>
+  </div>
+  <div class="project-info">
+    <h3 class="project-title">{projects[activeIndex].name}</h3>
+    <p class="project-description">{projects[activeIndex].description}</p>
+    <div class="project-links">
+      <a class="button" href="{projects[activeIndex].github}" target="_blank">
+        GitHub
+        <span class="material-icons">launch</span>
+      </a>
+      {#if projects[activeIndex].liveSite}
+        <a class="button" href="{projects[activeIndex].liveSite}" target="_blank">
+          Live Site
+          <span class="material-icons">launch</span></a>
+      {/if}
+    </div>
+  </div>
 </div>
 
 
+
+
 <style>
+    .about-me-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .increment-projects {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+        & button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 18px;
+            font-family: var(--sec-font);
+            color: var(--light-purple);
+            cursor: pointer;
+            border: none;
+        }
+
+        & button:focus {
+            border: 2px solid var(--light-purple);
+            border-radius: 5px;
+        }
+
+        & button:disabled {
+            color: var(--light-gray);
+            cursor: not-allowed;
+        }
+
+        & img {
+            width: 50%;
+            height: auto;
+        }
+    }
+
+    .project-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+    }
+
+    .project-title {
+        font-size: 2rem;
+        font-family: var(--font);
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .project-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+        & .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-family: var(--sec-font);
+            background-color: var(--light-purple);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-decoration: none;
+        }
+
+        & .button:hover {
+            background-color: var(--dark-purple);
+            transform: scale(1.05);
+        }
+    }
+
 
 </style>

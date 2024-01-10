@@ -1,12 +1,10 @@
 <script>
-    import {fade, blur, fly, slide} from "svelte/transition";
-    import {tweened} from "svelte/motion";
-    import {flip} from "svelte/animate";
-    import {quintOut} from "svelte/easing";
+    import {fade, blur, fly, slide, scale} from "svelte/transition";
+    import {cubicIn, cubicOut} from "svelte/easing";
 
     let aboutMe = ["Full Stack Web Developer 👩🏽‍💻", "U.S Navy Veteran 🇺🇸⚓️", "Coffee Lover ☕️", "Traveler ✈️", "Lifelong Learner 📚", "Problem Solver 🧐", "Technology Enthusiast 💻"];
 
-    let ms = 1000;
+    let ms = 3000;
     let counter = 0;
     const incr = () => {
         counter += 1;
@@ -29,9 +27,11 @@
     Jessica Rosier
     {#if aboutMe}
       <p>
-        {#if aboutMe[counter]}<span>{aboutMe[counter]}</span>{/if}
+        {#key counter}
+          {#if aboutMe[counter]}<span in:fade>{aboutMe[counter]}</span>{/if}
+        {/key}
       </p>
-    {/if  }
+    {/if}
   </div>
 
   <div class="d-flex flex-column align-items-center">
