@@ -89,6 +89,7 @@
         margin-top: 20px;
         font-weight: bolder;
         text-transform: capitalize;
+        padding: 0 20px;
     }
 
     @media only screen and (max-width: 768px) {
