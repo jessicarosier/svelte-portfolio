@@ -121,18 +121,13 @@
         }
 
         & button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 18px;
-            font-family: var(--sec-font);
-            color: var(--light-purple);
-            cursor: pointer;
-            border: 1px solid var(--light-purple);
-            border-radius: 5px;
+            background-color: transparent;
+            border: unset;
 
             & span {
-                font-size: 50px;
+                font-size: 80px;
+                font-weight: bolder;
+                color: var(--light-purple);
 
                 @media (max-width: 768px) {
                     font-size: 30px;
@@ -141,25 +136,16 @@
         }
 
         & button:hover {
-            background-color: var(--light-purple);
-
+            cursor: pointer;
             & span {
-                color: white;
+                transform: scale(1.5);
             }
-        }
-
-        & button:focus {
-            border: 3px solid var(--light-purple);
         }
 
 
         & img {
-            width: 100%;
+            width: 75%;
             height: auto;
-
-            @media (max-width: 768px) {
-                width: 75%;
-            }
         }
     }
 

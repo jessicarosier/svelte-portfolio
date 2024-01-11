@@ -16,7 +16,7 @@
     <p>
       Hello there!
       I'm
-      <strong>Jessica Rosier</strong>,
+      <strong class="animate-text">Jessica Rosier</strong>,
       <br>
       a passionate full stack web developer on a mission to
       create beautiful, functional, and user-friendly applications.
@@ -37,9 +37,30 @@
 
 <style>
 
-    strong {
-        color: cornflowerblue;
+    .animate-text {
+        background-image: linear-gradient(
+                -225deg,
+                #231557 0%,
+                white 29%,
+                rgba(56, 130, 234, 0.97) 67%,
+                black 100%
+        );
+        background-clip: border-box;
+        background-size: 200% auto;
+        color: #fff;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: textGradient 2s linear infinite;
+        display: inline-block;
+        font-size: 30px;
     }
+
+    @keyframes textGradient {
+        to {
+            background-position: 200% center;
+        }
+    }
+
 
     h2 {
         background-color: var(--dark-purple);

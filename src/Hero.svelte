@@ -135,7 +135,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        position: relative;
         width: 50px;
         height: 50px;
         border-radius: 20px;
