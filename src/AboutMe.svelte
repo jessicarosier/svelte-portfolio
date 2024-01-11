@@ -47,7 +47,6 @@
 
     .about-me-container {
         background-color: var(--dark-purple);
-        height: 100vh;
         font-family: var(--font);
         text-transform: uppercase;
         font-size: 2rem;

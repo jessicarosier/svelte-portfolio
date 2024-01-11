@@ -35,8 +35,9 @@
         text-transform: capitalize;
         padding: 0 20px;
 
-        & span {
+        & a span {
             color: cornflowerblue;
+            font-weight: bolder;
 
         }
     }

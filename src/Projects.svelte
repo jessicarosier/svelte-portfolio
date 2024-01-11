@@ -1,23 +1,7 @@
 <script>
-    import {fade, blur, fly, slide, scale, crossfade} from "svelte/transition";
-    import {tweened} from "svelte/motion";
-    import {flip} from "svelte/animate"; //must be used in for each block
-    import {
-        quintOut,
-        backInOut,
-        backOut,
-        backIn,
-        cubicOut,
-        cubicIn,
-        cubicInOut,
-        sineInOut,
-        expoInOut,
-        bounceInOut,
-        linear
-    } from "svelte/easing";
-    import {transition_in} from "svelte/internal";
+    import {fade, scale} from "svelte/transition";
 
-    export let activeIndex = 0;
+    let activeIndex = 0;
     const projects = [
         {
             name: "Favorite Movies App",
@@ -62,7 +46,7 @@
         }
     ];
 
-    export function handleNext() {
+    function handleNext() {
         if (activeIndex === projects.length - 1) {
             activeIndex = 0;
         } else {
@@ -71,7 +55,7 @@
 
     }
 
-    export function handlePrev() {
+    function handlePrev() {
         if (activeIndex === 0) {
             activeIndex = projects.length - 1;
         } else {
@@ -92,7 +76,7 @@
     {#key activeIndex}
       {#if handlePrev}
         <img transition:scale={{duration: 500}} src="{projects[activeIndex].img}" alt="{projects[activeIndex].alt}">
-        {:else}
+      {:else}
         <img transition:scale={{duration: 500}} src="{projects[activeIndex].img}" alt="{projects[activeIndex].alt}">
       {/if}
     {/key}
