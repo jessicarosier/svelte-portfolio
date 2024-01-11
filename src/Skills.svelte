@@ -79,13 +79,13 @@
         }
     ];
 
-    const title = "< Skills >";
+    const title = "< Tech Toolbox >";
 
 </script>
 
 
 <h2 id="skills" class="section-title"> {title} </h2>
-<div class="d-flex flex-column flex-xl-row skills-container" id="skills">
+<div class="d-flex flex-column skills-container flex-xl-row" id="skills">
   <section class="skills-col">
     <h3 class="skills-col-title text-center">Front End</h3>
     <div class="front-end-skills wrap-skills">
@@ -130,18 +130,25 @@
 <style>
 
     h2 {
-        background-color: var(--dark-purple);
-        color: white;
+
         margin-bottom: 0;
         padding: 20px 0;
+        background-color: var(--dark-purple);
+        color: white;
     }
 
     .skills-container {
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
         background-color: var(--dark-purple);
+        padding-top: 20px;
+        padding-bottom: 40px;
+
     }
 
     .skills-col {
-        padding-top: 20px;
+        padding: 0;
         display: flex;
         flex-direction: column;
         gap: 20px;
@@ -151,14 +158,26 @@
         font-weight: bolder;
         text-transform: uppercase;
         text-align: center;
+        border: 1px solid white;
+        border-radius: 10px;
+        width: 500px;
+        height: 500px;
+
+
+        @media (max-width: 768px) {
+            width: 90%;
+            height: 100%;
+        }
 
 
         & .skills-col-title {
             font-family: var(--font);
-            font-size: 50px;
+            font-size: 30px;
+            color: black;
             font-weight: bolder;
             text-transform: uppercase;
             text-align: center;
+            margin: 0;
 
         }
 
@@ -177,6 +196,7 @@
         font-weight: bolder;
         text-transform: uppercase;
         text-align: center;
+
     }
 
     .skill-card {

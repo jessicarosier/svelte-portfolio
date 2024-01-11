@@ -1,39 +1,6 @@
 <script>
-    import {flip} from "svelte/animate";
-    const certifications = [
-        {
-            name: "Securtiy+",
-            link: "https://www.credly.com/badges/469f4921-f554-4952-9365-c89947f5c373/public_url",
-            img: "img/certs/sec_plus.png",
-        },
-        {
-            name: "Cloud+",
-            link: "https://www.credly.com/badges/0b165358-b5c7-4423-8170-c21a5278f2d4/public_url",
-            img: "img/certs/cloud_plus.png",
-        },
-        {
-            name: "Network+",
-            link: "https://www.credly.com/badges/6ee6a226-61b4-4a86-a714-3db9ebea20e1/public_url",
-            img: "img/certs/network_plus.png",
-        },
-        {
-            name: "Server+",
-            link: "https://www.credly.com/badges/a9756f7e-7749-4aff-bde8-c5a89e9785c3/public_url",
-            img: "img/certs/server_plus.png",
-        },
-        {
-            name: "Microsoft Certified: Azure Fundamentals",
-            link: "https://www.credly.com/badges/5fc16da2-789f-4f3f-b364-d7f1036636c7/public_url",
-            img: "img/certs/azure_fundamentals.png",
-        },
-        {
-            name: "AWS Certified Cloud Practitioner",
-            link: "https://www.credly.com/badges/726fc5d4-c2b3-494a-b135-be48817d1bee/public_url",
-            img: "img/certs/aws_practitioner.png",
-        }
-    ];
 
-    let skills = [
+    const skills = [
         {
             name: "HTML",
             icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
@@ -104,74 +71,148 @@
             name: "VS Code",
             icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
             type: "tools"
+        },
+        {
+            name: "Svelte",
+            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg",
+            type: "front-end"
         }
     ];
 
+    const title = "< Skills >";
 
-    const title = "< Certifications >";
 </script>
 
-<h2 id="certs" class="section-title">{title}</h2>
-<div class="certs-container d-flex align-items-center justify-content-center flex-column flex-xl-row h-100">
-{#each certifications as cert}
-<div class="cert-card">
-  <img class="cert-img" src={cert.img} alt={cert.name} />
-  <a class="cert-overlay" href={cert.link} target="_blank">View Certificate</a>
-</div>
-{/each}
+
+<h2 id="skills" class="section-title"> {title} </h2>
+<div class="d-flex flex-column flex-xl-row skills-container" id="skills">
+  <section class="skills-col">
+    <h3 class="skills-col-title text-center">Front End</h3>
+    <div class="front-end-skills wrap-skills">
+      {#each skills.filter(skill => skill.type === "front-end") as skill}
+        <div class="skill-card">
+          <img class="skill-icon" src={skill.icon} alt={skill.name}/>
+          <p class="skill-name">{skill.name}</p>
+        </div>
+      {/each}
+    </div>
+  </section>
+
+
+  <section class="skills-col">
+    <h3 class="skills-col-title text-center">Back End</h3>
+    <div class="back-end-skills wrap-skills">
+      {#each skills.filter(skill => skill.type === "back-end") as skill}
+        <div class="skill-card">
+          <img class="skill-icon" src={skill.icon} alt={skill.name}/>
+          <p class="skill-name">{skill.name}</p>
+        </div>
+      {/each}
+    </div>
+  </section>
+
+
+  <section class="skills-col">
+    <h3 class="skills-col-title text-center">Tools</h3>
+    <div class="tools wrap-skills">
+      {#each skills.filter(skill => skill.type === "tools") as skill}
+        <div class="skill-card">
+          <img class="skill-icon" src={skill.icon} alt={skill.name}/>
+          <p class="skill-name">{skill.name}</p>
+        </div>
+      {/each}
+    </div>
+  </section>
+
 </div>
 
 
 <style>
-    .cert-card {
-        margin: 20px;
+
+    h2 {
+        background-color: var(--dark-purple);
+        color: white;
+        margin-bottom: 0;
+        padding: 20px 0;
+    }
+
+    .skills-container {
+        background-color: var(--dark-purple);
+    }
+
+    .skills-col {
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        color: white;
+        font-family: var(--font);
+        font-size: 30px;
+        font-weight: bolder;
+        text-transform: uppercase;
+        text-align: center;
+
+
+        & .skills-col-title {
+            font-family: var(--font);
+            font-size: 50px;
+            font-weight: bolder;
+            text-transform: uppercase;
+            text-align: center;
+
+        }
+
+    }
+
+    .wrap-skills {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
         padding: 20px;
+        color: white;
+        font-family: var(--font);
+        font-size: 30px;
+        font-weight: bolder;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .skill-card {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        background-color: #fff;
-        border-radius: 10px;
+        gap: 20px;
         font-size: 18px;
         font-family: var(--sec-font);
-
-        &:hover {
-            transform: scale(1.05);
-        }
+        max-width: 150px;
 
 
-        & .cert-img {
-            width: 150px;
+        & .skill-icon {
+            width: 30%;
             aspect-ratio: 1/1;
             object-fit: contain;
 
             @media (max-width: 768px) {
-                width: 200px;
+                width: 50%;
             }
         }
 
-        & .blur {
-            filter: blur(5px);
-        }
-
-        & .cert-overlay {
-            z-index: 1;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background-color: var(--dark-purple);
-            opacity: 80%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 10px;
-            text-decoration: none;
-            color: white;
+        & .skill-name {
             font-family: var(--font);
             font-size: 30px;
+            font-weight: bolder;
+            text-transform: uppercase;
             text-align: center;
+
+            @media (max-width: 768px) {
+                font-size: 20px;
+            }
         }
+
+
     }
 
 
