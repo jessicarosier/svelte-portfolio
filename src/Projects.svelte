@@ -90,7 +90,11 @@
       <span class="material-icons">arrow_back_ios</span>
     </button>
     {#key activeIndex}
-      <img in:fade out:slide src="{projects[activeIndex].img}" alt="{projects[activeIndex].alt}" class="project-img">
+      {#if handlePrev}
+        <img transition:scale={{duration: 500}} src="{projects[activeIndex].img}" alt="{projects[activeIndex].alt}">
+        {:else}
+        <img transition:scale={{duration: 500}} src="{projects[activeIndex].img}" alt="{projects[activeIndex].alt}">
+      {/if}
     {/key}
     <button on:click={handleNext}>
       <span class="material-icons">arrow_forward_ios</span>

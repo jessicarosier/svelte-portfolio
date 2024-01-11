@@ -34,20 +34,30 @@
 
     }
 
-</script>
+    let isNavOpen = false;
 
+    function toggleNav() {
+        isNavOpen = !isNavOpen;
+        if (isNavOpen) {
+            openMenu();
+        } else {
+            closeMenu();
+        }
+    }
+
+</script>
 <nav>
   <ul class="side-menu">
     {#each navLinks as link}
       <li>
-        <a href="{link.link}">{link.name}</a>
+        <a on:click={toggleNav} href="{link.link}">{link.name}</a>
       </li>
     {/each}
     <span on:click={() => closeMenu()} on:keypress={() => closeMenu()} class="material-icons menu-icons close-menu">
 close
 </span>
   </ul>
-  <span on:click={() => openMenu()} on:keypress={() => openMenu()} class="material-icons menu-icons open-menu">
+  <span on:click={toggleNav} on:keypress={toggleNav} class="material-icons menu-icons open-menu">
 menu
 </span>
 </nav>

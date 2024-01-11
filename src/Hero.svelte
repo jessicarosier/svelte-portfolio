@@ -25,7 +25,7 @@
 
   <div class="d-flex flex-column align-items-center">
     <div class="headshot-wrapper d-inline-block overflow-hidden object-fit-cover">
-      <img class="w-100" src="img/headshot.jpg"
+      <img transition:fade class="w-100" src="img/headshot.jpg"
            alt="professional-headshot">
     </div>
   </div>
