@@ -108,9 +108,11 @@
     ];
 
 
-
+    const title = "< Certifications >";
 </script>
-<div class="cert-wrapper">
+
+<h2 id="certs" class="section-title">{title}</h2>
+<div class="certs-container d-flex align-items-center justify-content-center flex-column flex-xl-row h-100">
 {#each certifications as cert}
 <div class="cert-card">
   <img class="cert-img" src={cert.img} alt={cert.name} />
@@ -119,13 +121,8 @@
 {/each}
 </div>
 
-<style>
-    .cert-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
 
+<style>
     .cert-card {
         margin: 20px;
         padding: 20px;
@@ -144,7 +141,7 @@
 
 
         & .cert-img {
-            width: 200px;
+            width: 150px;
             aspect-ratio: 1/1;
             object-fit: contain;
 
@@ -153,6 +150,28 @@
             }
         }
 
+        & .blur {
+            filter: blur(5px);
+        }
+
+        & .cert-overlay {
+
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: var(--dark-purple);
+            opacity: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            text-decoration: none;
+            color: white;
+            font-family: var(--font);
+            font-size: 30px;
+        }
     }
 
 

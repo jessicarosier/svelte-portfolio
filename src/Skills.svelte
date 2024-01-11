@@ -71,21 +71,28 @@
             name: "VS Code",
             icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
             type: "tools"
+        },
+        {
+            name: "Svelte",
+            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg",
+            type: "front-end"
         }
     ];
+
+    const title = "< Skills >";
 
 </script>
 
 
+<h2 id="skills" class="section-title"> {title} </h2>
 <div class="d-flex flex-column flex-xl-row skills-container" id="skills">
-
   <section class="skills-col">
     <h3 class="skills-col-title text-center">Front End</h3>
     <div class="front-end-skills wrap-skills">
       {#each skills.filter(skill => skill.type === "front-end") as skill}
         <div class="skill-card">
           <img class="skill-icon" src={skill.icon} alt={skill.name}/>
-          <p class="skill-name">${skill.name}</p>
+          <p class="skill-name">{skill.name}</p>
         </div>
       {/each}
     </div>
@@ -98,7 +105,7 @@
       {#each skills.filter(skill => skill.type === "back-end") as skill}
         <div class="skill-card">
           <img class="skill-icon" src={skill.icon} alt={skill.name}/>
-          <p class="skill-name">${skill.name}</p>
+          <p class="skill-name">{skill.name}</p>
         </div>
       {/each}
     </div>

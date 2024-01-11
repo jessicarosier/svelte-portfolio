@@ -18,7 +18,7 @@
 }
 
 body {
-	
+
 }
 
 html {
@@ -48,5 +48,42 @@ label {
 input:disabled {
 	color: #ccc;
 }
+
+.button {
+	display: inline-block;
+	text-align: center;
+	padding: 10px 20px;
+	font-size: 18px;
+	font-family: var(--sec-font);
+	background-color: var(--dark-purple);
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease, transform 0.2s ease;
+	text-decoration: none;
+}
+
+.button:hover {
+	background-color: white;
+	color: black;
+	border: 1px solid var(--dark-purple);
+	transform: scale(1.05);
+}
+
+.button:focus {
+	outline: none;
+}
+
+.section-title {
+	font-family: var(--font);
+	font-size: 40px;
+	text-align: center;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+	margin-top: 50px;
+	font-weight: bold;
+}
+
 
 

@@ -1,5 +1,5 @@
 <script>
-    import {fade, blur, fly, slide,scale, crossfade} from "svelte/transition";
+    import {fade, blur, fly, slide, scale, crossfade} from "svelte/transition";
     import {tweened} from "svelte/motion";
     import {flip} from "svelte/animate"; //must be used in for each block
     import {
@@ -78,41 +78,40 @@
             activeIndex--;
         }
     }
+
+    const title = "< Projects >";
 </script>
 
 
-
-    <div class="about-me-container flex-column justify-content-center align-items-center gap-5">
-      <div class="increment-projects">
-        <button on:click={handlePrev}>
-          <span class="material-icons">arrow_back_ios</span>
-        </button>
-        {#key activeIndex}
-        <img in:fade out:slide src="{projects[activeIndex].img}" alt="{projects[activeIndex].alt}" class="project-img">
-        {/key}
-        <button on:click={handleNext}>
-          <span class="material-icons">arrow_forward_ios</span>
-        </button>
-      </div>
-      <div class="project-info">
-        <h3 class="project-title">{projects[activeIndex].name}</h3>
-        <p class="project-description">{projects[activeIndex].description}</p>
-        <div class="project-links">
-          <a class="button" href="{projects[activeIndex].github}" target="_blank">
-            GitHub
-            <span class="material-icons">launch</span>
-          </a>
-          {#if projects[activeIndex].liveSite}
-            <a class="button" href="{projects[activeIndex].liveSite}" target="_blank">
-              Live Site
-              <span class="material-icons">launch</span></a>
-          {/if}
-        </div>
-      </div>
+<h2 id="projects" class="section-title">{title}</h2>
+<div class="about-me-container flex-column justify-content-center align-items-center gap-5">
+  <div class="increment-projects">
+    <button on:click={handlePrev}>
+      <span class="material-icons">arrow_back_ios</span>
+    </button>
+    {#key activeIndex}
+      <img in:fade out:slide src="{projects[activeIndex].img}" alt="{projects[activeIndex].alt}" class="project-img">
+    {/key}
+    <button on:click={handleNext}>
+      <span class="material-icons">arrow_forward_ios</span>
+    </button>
+  </div>
+  <div class="project-info">
+    <h3 class="project-title">{projects[activeIndex].name}</h3>
+    <p class="project-description">{projects[activeIndex].description}</p>
+    <div class="project-links">
+      <a class="button" href="{projects[activeIndex].github}" target="_blank">
+        GitHub
+        <span class="material-icons">launch</span>
+      </a>
+      {#if projects[activeIndex].liveSite}
+        <a class="button" href="{projects[activeIndex].liveSite}" target="_blank">
+          Live Site
+          <span class="material-icons">launch</span></a>
+      {/if}
     </div>
-
-
-
+  </div>
+</div>
 
 
 <style>
@@ -137,7 +136,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            text-align: center;
             font-size: 18px;
             font-family: var(--sec-font);
             color: var(--light-purple);
@@ -152,8 +150,12 @@
 
 
         & img {
-            width: 50%;
+            width: 100%;
             height: auto;
+
+            @media (max-width: 768px) {
+                width: 75%;
+            }
         }
     }
 
@@ -182,27 +184,6 @@
         align-items: center;
         gap: 1rem;
 
-        & .button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 10px 20px;
-            font-size: 18px;
-            font-family: var(--sec-font);
-            background-color: var(--light-purple);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            text-decoration: none;
-        }
-
-        & .button:hover {
-            background-color: var(--dark-purple);
-            transform: scale(1.05);
-        }
     }
 
 

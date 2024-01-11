@@ -4,7 +4,9 @@
     import Projects from "./Projects.svelte";
     import Certifications from "./Certifications.svelte";
     import Skills from "./Skills.svelte";
-
+    import Contact from "./Contact.svelte";
+    import Footer from "./Footer.svelte";
+    import AboutMe from "./AboutMe.svelte";
 
 </script>
 
@@ -16,15 +18,17 @@
 
   </div>
 
+  <Projects/>
 
-    <Projects />
+  <AboutMe/>
 
-    <Certifications />
+  <Certifications/>
 
-  <Skills />
+  <Skills/>
 
+  <Contact/>
 
-
+  <Footer/>
 
 
 </main>
@@ -32,9 +36,4 @@
 <style>
 
 
-    @media (min-width: 640px) {
-        main {
-            max-width: none;
-        }
-    }
 </style>

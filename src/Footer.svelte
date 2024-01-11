@@ -23,46 +23,31 @@
 
     ];
 
-    function openMenu() {
-        const menu = document.querySelector(".side-menu");
-        menu.style.right = "0";
-    }
-
-    function closeMenu() {
-        const menu = document.querySelector(".side-menu");
-        menu.style.right = "-300px";
-
-    }
-
 </script>
 
 <nav>
-  <ul class="side-menu">
+  <ul >
     {#each navLinks as link}
       <li>
         <a href="{link.link}">{link.name}</a>
       </li>
     {/each}
-    <span on:click={() => closeMenu()} class="material-icons menu-icons close-menu">
-close
-</span>
   </ul>
-  <span on:click={() => openMenu()} class="material-icons menu-icons open-menu">
-menu
-</span>
+  <p>© 2023 by Jessica Rosier. This site was built using Svelte. <i class="devicon-svelte-plain colored"></i></p>
 </nav>
 
 <style>
 
     nav {
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        flex-wrap: wrap;
         background-color: var(--dark-purple);
         padding: 0;
         margin: 0;
         font-family: var(--font);
+        font-size: 20px;
         font-weight: bolder;
         text-transform: uppercase;
         letter-spacing: 5px;
@@ -79,7 +64,7 @@ menu
     nav ul li a {
         color: white;
         text-decoration: none;
-        font-size: 20px;
+        font-size: 18px;
         position: relative;
     }
 
@@ -99,8 +84,10 @@ menu
         width: 100%;
     }
 
-    nav .menu-icons {
-        display: none;
+    p {
+        margin-top: 20px;
+        font-weight: bolder;
+        text-transform: capitalize;
     }
 
     @media only screen and (max-width: 768px) {
@@ -108,11 +95,6 @@ menu
             justify-content: end;
         }
 
-        nav .menu-icons {
-            display: block;
-            cursor: pointer;
-            margin-right: 30px;
-        }
 
         nav ul {
             background: var(--dark-purple);
@@ -131,12 +113,6 @@ menu
             margin: 25px;
         }
 
-        nav ul .menu-icons {
-            position: absolute;
-            top: 25px;
-            left: 25px;
-            cursor: pointer;
-        }
     }
 
 
