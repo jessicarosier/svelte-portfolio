@@ -142,6 +142,22 @@
             cursor: pointer;
             border: 1px solid var(--light-purple);
             border-radius: 5px;
+
+            & span {
+                font-size: 50px;
+
+                @media (max-width: 768px) {
+                    font-size: 30px;
+                }
+            }
+        }
+
+        & button:hover {
+            background-color: var(--light-purple);
+
+            & span {
+                color: white;
+            }
         }
 
         & button:focus {

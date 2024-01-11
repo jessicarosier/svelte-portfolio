@@ -8,7 +8,7 @@
 <div class="about-me-container d-flex flex-column flex-xl-row justify-content-center align-items-center">
 
   <div class="d-flex flex-column align-items-center">
-    <div class="image-wrapper d-inline-block position-relative overflow-hidden object-fit-cover">
+    <div class="image-wrapper d-inline-block overflow-hidden object-fit-cover">
       <img class="w-100" src="img/jess1.jpeg"
            alt="Jessica Rosier">
     </div>
@@ -36,6 +36,13 @@
 
 
 <style>
+
+    h2 {
+        background-color: var(--dark-purple);
+        color: white;
+        margin-bottom: 0;
+        padding: 20px 0;
+    }
 
 
     .about-me-container {

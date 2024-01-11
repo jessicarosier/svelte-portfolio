@@ -129,6 +129,13 @@
 
 <style>
 
+    h2 {
+        background-color: var(--dark-purple);
+        color: white;
+        margin-bottom: 0;
+        padding: 20px 0;
+    }
+
     .skills-container {
         background-color: var(--dark-purple);
     }

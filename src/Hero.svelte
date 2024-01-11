@@ -24,7 +24,7 @@
 <div class="about-me-container d-flex flex-column flex-xl-row justify-content-center align-items-center">
 
   <div class="d-flex flex-column align-items-center">
-    <div class="headshot-wrapper d-inline-block position-relative overflow-hidden object-fit-cover">
+    <div class="headshot-wrapper d-inline-block overflow-hidden object-fit-cover">
       <img class="w-100" src="img/headshot.jpg"
            alt="professional-headshot">
     </div>
