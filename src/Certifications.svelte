@@ -1,5 +1,6 @@
 <script>
     import {flip} from "svelte/animate";
+
     const certifications = [
         {
             name: "Securtiy+",
@@ -33,96 +34,53 @@
         }
     ];
 
-    let skills = [
-        {
-            name: "HTML",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-            type: "front-end"
-        },
-        {
-            name: "CSS",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-            type: "front-end"
-        },
-        {
-            name: "JavaScript",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-            type: "front-end"
-        },
-        {
-            name: "jQuery",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg",
-            type: "front-end"
-        },
-        {
-            name: "Bootstrap",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg",
-            type: "front-end"
-        },
-        {
-            name: "Java",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-plain.svg",
-            type: "back-end"
-        },
-        {
-            name: "mySQL",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
-            type: "back-end"
-        },
-        {
-            name: "Spring Boot",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
-            type: "back-end"
-        },
+    let isHovered = false;
 
-        {
-            name: "GitHub",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
-            type: "tools"
-        },
-        {
-            name: "NPM",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg",
-            type: "tools"
-        },
-        {
-            name: "Azure",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg",
-            type: "tools"
-        },
-        {
-            name: "AWS",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
-            type: "tools"
-        },
-        {
-            name: "Linux",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
-            type: "tools"
-        },
-        {
-            name: "VS Code",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
-            type: "tools"
-        }
-    ];
+    function handleHover() {
+        isHovered = true;
+    }
 
+    function handleHoverEnd() {
+        isHovered = false;
+    }
 
     const title = "< Certifications >";
 </script>
 
 <h2 id="certs" class="section-title">{title}</h2>
-<div class="certs-container d-flex align-items-center justify-content-center flex-column flex-xl-row h-100">
-{#each certifications as cert}
-<div class="cert-card">
-  <img class="cert-img" src={cert.img} alt={cert.name} />
-  <a class="cert-overlay" href={cert.link} target="_blank">View Certificate</a>
-</div>
-{/each}
-</div>
+<section>
+  <div class="certs-container">
+    {#each certifications as cert}
+      <div on:mouseenter={handleHover} on:mouseleave={handleHoverEnd} class="cert-card">
+        <img class="cert-img" src={cert.img} alt={cert.name}/>
+        {#if isHovered}
+          <a class="cert-overlay" href={cert.link} target="_blank">View Certificate</a>
+        {/if}
+
+      </div>
+    {/each}
+  </div>
+</section>
 
 
 <style>
+
+    section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .certs-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 50%;
+    }
+
     .cert-card {
         margin: 20px;
         padding: 20px;
@@ -134,6 +92,7 @@
         border-radius: 10px;
         font-size: 18px;
         font-family: var(--sec-font);
+        width: 200px;
 
         &:hover {
             transform: scale(1.05);
@@ -150,28 +109,25 @@
             }
         }
 
-        & .blur {
-            filter: blur(5px);
-        }
+    }
 
-        & .cert-overlay {
-            z-index: 1;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background-color: var(--dark-purple);
-            opacity: 80%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 10px;
-            text-decoration: none;
-            color: white;
-            font-family: var(--font);
-            font-size: 30px;
-            text-align: center;
-        }
+    .cert-overlay {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: var(--dark-purple);
+        opacity: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        text-decoration: none;
+        color: white;
+        font-family: var(--font);
+        font-size: 30px;
     }
 
 
