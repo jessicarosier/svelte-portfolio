@@ -78,7 +78,7 @@
 
     .aboutMeText {
         & h3 {
-            font-size: 75px;
+            font-size: 100px;
             font-weight: bold;
             margin: 0;
 
