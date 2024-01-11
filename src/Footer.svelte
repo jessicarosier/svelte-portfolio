@@ -33,7 +33,8 @@
       </li>
     {/each}
   </ul>
-  <p>© 2023 by Jessica Rosier. This site was built using Svelte. <i class="devicon-svelte-plain colored"></i></p>
+  <p>© 2024 by Jessica Rosier. This site was built using Svelte. <i class="devicon-svelte-plain colored"></i></p>
+  <p>See the source code here: <a href="https://github.com/jessicarosier/svelte-portfolio" target="_blank"><i class="devicon-github-original colored"></i></a></p>
 </nav>
 
 <style>
