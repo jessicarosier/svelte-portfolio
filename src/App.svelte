@@ -11,17 +11,13 @@
     //boolean to check if element is in view
     let isProjectsActive = false;
     let isAboutMeActive = false;
-    let isCertsActive = false;
-    let isSkillsActive = false;
-    let isContactActive = false;
 
     //scroll position
     let y;
 
-    window.onscroll = function () {
-        console.log(window.pageYOffset);
-    };
-
+    // window.onscroll = function () {
+    //     console.log(window.pageYOffset);
+    // };
 
     //if the scroll position is greater than 400px, then the element is in view
     $: if (y > 400 && y < 2000) {
@@ -39,7 +35,7 @@
 
 </script>
 
-<!--binds the scroll position to the y variable-->
+<!--binds the scroll position to the y variable so we always have the current scroll position -->
 <svelte:window bind:scrollY={y}/>
 
 <main class="page-wrapper">
@@ -64,10 +60,4 @@
 
   <Footer/>
 
-
 </main>
-
-<style>
-
-
-</style>

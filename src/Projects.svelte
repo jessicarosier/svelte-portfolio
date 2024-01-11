@@ -17,7 +17,7 @@
             img: "img/preview/weather-mbp.jpeg",
             alt: "screenshot of weather app",
             github: "https://github.com/jessicarosier/weather-map",
-            liveSite: "https://weather-map.jessicarosier.com/"
+            liveSite: "https://weather-map.jessicarosier.com",
         },
         {
             name: "Coffee Project",
@@ -42,7 +42,7 @@
             img: "img/preview/mapshare-mbp.jpeg",
             alt: "screenshot of mapshare",
             github: "https://github.com/Mapstone-Capstone/Mapstone",
-            liveSite: "https://map-share.net/",
+            liveSite: "https://map-share.net",
         }
     ];
 
@@ -89,12 +89,12 @@
     <p class="project-description">{projects[activeIndex].description}</p>
     <div class="project-links">
       <a class="button" href="{projects[activeIndex].github}" target="_blank">
-        GitHub
-        <span class="material-icons">launch</span>
+        Source Code
+        <i class="devicon-github-original"></i>
       </a>
       {#if projects[activeIndex].liveSite}
         <a class="button" href="{projects[activeIndex].liveSite}" target="_blank">
-          Live Site
+          {projects[activeIndex].liveSite.split("//")[1]}
           <span class="material-icons">launch</span></a>
       {/if}
     </div>
@@ -187,6 +187,18 @@
         justify-content: center;
         align-items: center;
         gap: 1rem;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
+
+        & a {
+            height: 65px;
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            align-items: center;
+        }
 
     }
 

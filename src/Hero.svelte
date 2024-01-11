@@ -1,6 +1,5 @@
 <script>
     import {fade, blur, fly, slide, scale} from "svelte/transition";
-    import {cubicIn, cubicOut} from "svelte/easing";
 
     let aboutMe = ["Full Stack Web Developer 👩🏽‍💻", "U.S Navy Veteran 🇺🇸⚓️", "Coffee Lover ☕️", "Traveler ✈️", "Lifelong Learner 📚", "Problem Solver 🧐", "Technology Enthusiast 💻"];
 
@@ -25,7 +24,7 @@
 
   <div class="d-flex flex-column align-items-center">
     <div class="headshot-wrapper d-inline-block overflow-hidden object-fit-cover">
-      <img transition:fade class="w-100" src="img/headshot.jpg"
+      <img class="w-100" src="img/headshot.jpg"
            alt="professional-headshot">
     </div>
   </div>
@@ -149,6 +148,43 @@
             width: 50px;
             height: 50px;
 
+        }
+    }
+
+    .wave {
+        animation-name: wave-animation;
+        animation-duration: 2.5s;
+        animation-iteration-count: infinite;
+        transform-origin: 70% 70%;
+        display: inline-block;
+    }
+
+    @keyframes wave-animation {
+        0% {
+            transform: rotate(0.0deg)
+        }
+        10% {
+            transform: rotate(14.0deg)
+        }
+
+        20% {
+            transform: rotate(-8.0deg)
+        }
+        30% {
+            transform: rotate(14.0deg)
+        }
+        40% {
+            transform: rotate(-4.0deg)
+        }
+        50% {
+            transform: rotate(10.0deg)
+        }
+        60% {
+            transform: rotate(0.0deg)
+        }
+        /* Reset for the last half to pause */
+        100% {
+            transform: rotate(0.0deg)
         }
 
     }

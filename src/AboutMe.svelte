@@ -1,5 +1,4 @@
 <script>
-
     const title = "< About Me >";
 </script>
 
@@ -16,7 +15,8 @@
   <div class="d-flex flex-column align-items-center aboutMeText">
     <p>
       Hello there!
-      I'm <strong>Jessica Rosier</strong>,
+      I'm
+      <strong>Jessica Rosier</strong>,
       <br>
       a passionate full stack web developer on a mission to
       create beautiful, functional, and user-friendly applications.
@@ -36,6 +36,10 @@
 
 
 <style>
+
+    strong {
+        color: cornflowerblue;
+    }
 
     h2 {
         background-color: var(--dark-purple);
