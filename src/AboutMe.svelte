@@ -90,31 +90,5 @@
 
     }
 
-    .links-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-    }
 
-    a.contact-button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        width: 50px;
-        height: 50px;
-        border-radius: 20px;
-        background-color: var(--dark-purple);
-        color: #fff;
-
-        & img {
-            border-radius: 20px;
-            padding: 5px;
-            width: 50px;
-            height: 50px;
-
-        }
-
-    }
 </style>

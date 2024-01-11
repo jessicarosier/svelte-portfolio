@@ -43,11 +43,11 @@
         <a href="{link.link}">{link.name}</a>
       </li>
     {/each}
-    <span on:click={() => closeMenu()} class="material-icons menu-icons close-menu">
+    <span on:click={() => closeMenu()} on:keypress={() => closeMenu()} class="material-icons menu-icons close-menu">
 close
 </span>
   </ul>
-  <span on:click={() => openMenu()} class="material-icons menu-icons open-menu">
+  <span on:click={() => openMenu()} on:keypress={() => openMenu()} class="material-icons menu-icons open-menu">
 menu
 </span>
 </nav>
