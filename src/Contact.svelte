@@ -31,11 +31,6 @@
             .catch((error) => alert(error));
     };
 
-    document
-        .querySelector("form")
-        .addEventListener("submit", handleSubmit);
-
-
 </script>
 
 
