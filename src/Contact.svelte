@@ -51,7 +51,7 @@
           <input type="text" name="Name" placeholder="Your name" required>
           <input type="email" name="Email" placeholder="Your email" required>
           <textarea name="Message" rows="6" placeholder="Your message" required></textarea>
-          <button type="submit" class="button" on:click={submitForm}>Submit</button>
+          <button type="button" class="button" on:click|preventDefault={() => submitForm()}>Send</button>
         </form>
 
   </div>
