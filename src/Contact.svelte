@@ -18,6 +18,24 @@
     //         });
     // }
 
+    const handleSubmit = (e) => {
+        const myForm = e.target;
+        const formData = new FormData(myForm);
+
+        fetch("/", {
+            method: "POST",
+            headers: {"Content-Type": "application/x-www-form-urlencoded"},
+            body: new URLSearchParams(formData).toString(),
+        })
+            .then(() => console.log("Form successfully submitted"))
+            .catch((error) => alert(error));
+    };
+
+    document
+        .querySelector("form")
+        .addEventListener("submit", handleSubmit);
+
+
 </script>
 
 
@@ -44,26 +62,25 @@
   </div>
 
   <div class="contact-right-column col">
-<!--    <span id="msg">{message}</span>-->
-<!--    <form name="contact" class="contact-form" method="POST" data-netlify="true">-->
-<!--      <input type="hidden" name="subject"-->
-<!--             value="New Message from iridescent-jalebi-c7910f.netlify.app" />-->
-<!--      <input type="text" name="Name" placeholder="Your name" required>-->
-<!--      <input type="email" name="Email" placeholder="Your email" required>-->
-<!--      <textarea name="Message" rows="6" placeholder="Your message" required></textarea>-->
-<!--      <button type="submit" class="button">Submit</button>-->
-<!--    </form>-->
+    <!--    <span id="msg">{message}</span>-->
+    <!--    <form name="contact" class="contact-form" method="POST" data-netlify="true">-->
+    <!--      <input type="hidden" name="subject"-->
+    <!--             value="New Message from iridescent-jalebi-c7910f.netlify.app" />-->
+    <!--      <input type="text" name="Name" placeholder="Your name" required>-->
+    <!--      <input type="email" name="Email" placeholder="Your email" required>-->
+    <!--      <textarea name="Message" rows="6" placeholder="Your message" required></textarea>-->
+    <!--      <button type="submit" class="button">Submit</button>-->
+    <!--    </form>-->
 
-    <form class="contact-form" name="contact" netlify>
-      <p>
-        <label>Name <input type="text" name="name" /></label>
-      </p>
-      <p>
-        <label>Email <input type="email" name="email" /></label>
-      </p>
-      <p>
-        <button type="submit">Send</button>
-      </p>
+    <form class="contact-form" name="contact" method="POST" on:submit={handleSubmit} data-netlify="true">
+
+      <label>Name <input type="text" name="name"/></label>
+
+      <label>Email <input type="email" name="email"/></label>
+
+      <textarea name="Message" rows="6" placeholder="Your message" required></textarea>
+      <button type="submit">Send</button>
+
     </form>
   </div>
 </div>
