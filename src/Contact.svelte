@@ -1,24 +1,23 @@
 <script>
     const title = "< Contact Me >";
 
-    // const scriptURL = "https://script.google.com/macros/s/AKfycbwZdxUD3WdENHe4YoFyFMuwlYL3GAFlbJobEDQm0HG5Sl-r8vjkzWnKNeK3apxW1U_T/exec";
-    // const form = document.forms["submit-to-google-sheet"];
-    // let message = "";
-    //
-    // function submitForm() {
-    //     message = "Sending...";
-    //     fetch(scriptURL, {method: "POST", body: new FormData(form)})
-    //         .then((response) => {
-    //             console.log("Success!", response);
-    //             message = "Thanks for reaching out! I'll get back to you soon.";
-    //         })
-    //         .catch((error) => {
-    //             console.error("Error!", error.message);
-    //             message = "Oops! Something went wrong. Please try again.";
-    //         });
-    // }
+    const scriptURL = "https://script.google.com/macros/s/AKfycbwZdxUD3WdENHe4YoFyFMuwlYL3GAFlbJobEDQm0HG5Sl-r8vjkzWnKNeK3apxW1U_T/exec";
+    const form = document.forms["submit-to-google-sheet"];
+    let message = "";
 
-
+    function submitForm() {
+        message = "Sending...";
+        fetch(scriptURL, {method: "POST", body: new FormData(form)})
+            .then((response) => {
+                console.log("Success!", response);
+                message = "Thanks for reaching out! I'll get back to you soon.";
+            })
+            .catch((error) => {
+                console.error("Error!", error.message);
+                message = "Oops! Something went wrong. Please try again.";
+            });
+    }
+    
 </script>
 
 
@@ -45,26 +44,16 @@
   </div>
 
   <div class="contact-right-column col">
-    <!--    <span id="msg">{message}</span>-->
-    <!--    <form name="contact" class="contact-form" method="POST" data-netlify="true">-->
-    <!--      <input type="hidden" name="subject"-->
-    <!--             value="New Message from iridescent-jalebi-c7910f.netlify.app" />-->
-    <!--      <input type="text" name="Name" placeholder="Your name" required>-->
-    <!--      <input type="email" name="Email" placeholder="Your email" required>-->
-    <!--      <textarea name="Message" rows="6" placeholder="Your message" required></textarea>-->
-    <!--      <button type="submit" class="button">Submit</button>-->
-    <!--    </form>-->
+        <span id="msg">{message}</span>
+        <form name="contact" class="contact-form" method="POST" data-netlify="true">
+          <input type="hidden" name="subject"
+                 value="New Message from iridescent-jalebi-c7910f.netlify.app" />
+          <input type="text" name="Name" placeholder="Your name" required>
+          <input type="email" name="Email" placeholder="Your email" required>
+          <textarea name="Message" rows="6" placeholder="Your message" required></textarea>
+          <button type="submit" class="button" on:click={submitForm}>Submit</button>
+        </form>
 
-    <form class="contact-form" method="POST"data-netlify="true">
-
-      <label>Name <input type="text" name="name"/></label>
-
-      <label>Email <input type="email" name="email"/></label>
-
-      <textarea name="Message" rows="6" placeholder="Your message" required></textarea>
-      <button type="submit">Send</button>
-
-    </form>
   </div>
 </div>
 
