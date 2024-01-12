@@ -4,6 +4,14 @@
     let activeIndex = 0;
     const projects = [
         {
+            name: "Map-Share",
+            description: "Map-Share is a full stack web application that allows users to document their travels and share their experiences with others. Users can register for a new account, edit their profile, and create custom maps to document the countries they have visited. Technologies used include HTML, CSS, JavaScript, Java, MySQL, Spring Boot, and Thymeleaf. Map-Share was mapped using Spring Boot, and Thymeleaf was used to generate HTML pages. RESTful APIs were used to retrieve data from the database and display it on the front end. The Mapbox API was used to display maps and FileStack API was used to upload images. This project was completed as part of the Software Development Bootcamp at Codeup and was deployed with Dokku.",
+            img: "img/preview/mapshare-mbp.jpeg",
+            alt: "screenshot of mapshare",
+            github: "https://github.com/Mapstone-Capstone/Mapstone",
+            liveSite: "https://map-share.net",
+        },
+        {
             name: "Favorite Movies App",
             description: "This web app allows users to search for movies and add them to a list of favorites. The app uses the TMDB API to search for movies and retrieve movie data as well as a local JSON database to store the list of favorite movies. Technologies used include HTML, CSS, JavaScript, bootstrap, and JSON server.",
             img: "img/preview/movies-mbp.jpeg",
@@ -34,15 +42,6 @@
             img: "img/preview/ducklister-mbp.jpeg",
             alt: "screenshot of ducklister",
             github: "https://github.com/Genesis-Luis-Jessica-Adlister/ducklister",
-        },
-
-        {
-            name: "Map-Share",
-            description: "Map-Share is a full stack web application that allows users to document their travels and share their experiences with others. Users can register for a new account, edit their profile, and create custom maps to document the countries they have visited. Technologies used include HTML, CSS, JavaScript, Java, MySQL, Spring Boot, and Thymeleaf. Map-Share was mapped using Spring Boot, and Thymeleaf was used to generate HTML pages. RESTful APIs were used to retrieve data from the database and display it on the front end. The Mapbox API was used to display maps and FileStack API was used to upload images. This project was completed as part of the Software Development Bootcamp at Codeup and was deployed with Dokku.",
-            img: "img/preview/mapshare-mbp.jpeg",
-            alt: "screenshot of mapshare",
-            github: "https://github.com/Mapstone-Capstone/Mapstone",
-            liveSite: "https://map-share.net",
         }
     ];
 

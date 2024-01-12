@@ -1,6 +1,4 @@
 <script>
-    import {flip} from "svelte/animate";
-
     const certifications = [
         {
             name: "Securtiy+",
