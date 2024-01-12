@@ -45,13 +45,25 @@
 
   <div class="contact-right-column col">
 <!--    <span id="msg">{message}</span>-->
-    <form name="contact" method="POST" data-netlify="true">
-      <input type="hidden" name="subject"
-             value="New Message from iridescent-jalebi-c7910f.netlify.app" />
-      <input type="text" name="Name" placeholder="Your name" required>
-      <input type="email" name="Email" placeholder="Your email" required>
-      <textarea name="Message" rows="6" placeholder="Your message" required></textarea>
-      <button type="submit" class="button">Submit</button>
+<!--    <form name="contact" class="contact-form" method="POST" data-netlify="true">-->
+<!--      <input type="hidden" name="subject"-->
+<!--             value="New Message from iridescent-jalebi-c7910f.netlify.app" />-->
+<!--      <input type="text" name="Name" placeholder="Your name" required>-->
+<!--      <input type="email" name="Email" placeholder="Your email" required>-->
+<!--      <textarea name="Message" rows="6" placeholder="Your message" required></textarea>-->
+<!--      <button type="submit" class="button">Submit</button>-->
+<!--    </form>-->
+
+    <form class="contact-form" name="contact" netlify>
+      <p>
+        <label>Name <input type="text" name="name" /></label>
+      </p>
+      <p>
+        <label>Email <input type="email" name="email" /></label>
+      </p>
+      <p>
+        <button type="submit">Send</button>
+      </p>
     </form>
   </div>
 </div>
