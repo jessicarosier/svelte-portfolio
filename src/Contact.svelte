@@ -1,22 +1,22 @@
 <script>
     const title = "< Contact Me >";
 
-    const scriptURL = "https://script.google.com/macros/s/AKfycbwZdxUD3WdENHe4YoFyFMuwlYL3GAFlbJobEDQm0HG5Sl-r8vjkzWnKNeK3apxW1U_T/exec";
-    const form = document.forms["submit-to-google-sheet"];
-    let message = "";
-
-    function submitForm() {
-        message = "Sending...";
-        fetch(scriptURL, {method: "POST", body: new FormData(form)})
-            .then((response) => {
-                console.log("Success!", response);
-                message = "Thanks for reaching out! I'll get back to you soon.";
-            })
-            .catch((error) => {
-                console.error("Error!", error.message);
-                message = "Oops! Something went wrong. Please try again.";
-            });
-    }
+    // const scriptURL = "https://script.google.com/macros/s/AKfycbwZdxUD3WdENHe4YoFyFMuwlYL3GAFlbJobEDQm0HG5Sl-r8vjkzWnKNeK3apxW1U_T/exec";
+    // const form = document.forms["submit-to-google-sheet"];
+    // let message = "";
+    //
+    // function submitForm() {
+    //     message = "Sending...";
+    //     fetch(scriptURL, {method: "POST", body: new FormData(form)})
+    //         .then((response) => {
+    //             console.log("Success!", response);
+    //             message = "Thanks for reaching out! I'll get back to you soon.";
+    //         })
+    //         .catch((error) => {
+    //             console.error("Error!", error.message);
+    //             message = "Oops! Something went wrong. Please try again.";
+    //         });
+    // }
 
 </script>
 
@@ -44,12 +44,14 @@
   </div>
 
   <div class="contact-right-column col">
-    <span id="msg">{message}</span>
-    <form class="contact-form" name="submit-to-google-sheet">
+<!--    <span id="msg">{message}</span>-->
+    <form name="contact" method="POST" data-netlify="true">
+      <input type="hidden" name="subject"
+             value="New Message from iridescent-jalebi-c7910f.netlify.app" />
       <input type="text" name="Name" placeholder="Your name" required>
       <input type="email" name="Email" placeholder="Your email" required>
       <textarea name="Message" rows="6" placeholder="Your message" required></textarea>
-      <button on:click|preventDefault = {() => submitForm()} type="button" class="button">Submit</button>
+      <button type="submit" class="button">Submit</button>
     </form>
   </div>
 </div>
