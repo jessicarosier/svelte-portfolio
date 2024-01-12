@@ -18,18 +18,6 @@
     //         });
     // }
 
-    const handleSubmit = (e) => {
-        const myForm = e.target;
-        const formData = new FormData(myForm);
-
-        fetch("/", {
-            method: "POST",
-            headers: {"Content-Type": "application/x-www-form-urlencoded"},
-            body: new URLSearchParams(formData).toString(),
-        })
-            .then(() => console.log("Form successfully submitted"))
-            .catch((error) => alert(error));
-    };
 
 </script>
 
@@ -67,7 +55,7 @@
     <!--      <button type="submit" class="button">Submit</button>-->
     <!--    </form>-->
 
-    <form class="contact-form" name="contact" method="POST" on:submit={handleSubmit} data-netlify="true">
+    <form class="contact-form" method="POST"data-netlify="true">
 
       <label>Name <input type="text" name="name"/></label>
 
