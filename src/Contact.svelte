@@ -2,20 +2,29 @@
     const title = "< Contact Me >";
 
     const scriptURL = "https://script.google.com/macros/s/AKfycbwZdxUD3WdENHe4YoFyFMuwlYL3GAFlbJobEDQm0HG5Sl-r8vjkzWnKNeK3apxW1U_T/exec";
-    const form = document.forms["submit-to-google-sheet"];
+
     let message = "";
+
+    let formSubmitted = false;
+
 
     function submitForm() {
         message = "Sending...";
-        fetch(scriptURL, {method: "POST", body: new FormData(form)})
+        fetch(scriptURL, {method: "POST", body: new FormData(document.forms["submit-to-google-sheet"])})
             .then((response) => {
                 console.log("Success!", response);
+                formSubmitted = true;
                 message = "Thanks for reaching out! I'll get back to you soon.";
+
             })
             .catch((error) => {
                 console.error("Error!", error.message);
                 message = "Oops! Something went wrong. Please try again.";
             });
+
+        setTimeout(() => {
+            message = "";
+        }, 5000);
     }
     
 </script>
@@ -53,7 +62,6 @@
           <textarea name="Message" rows="6" placeholder="Your message" required></textarea>
           <button type="button" class="button" on:click|preventDefault={() => submitForm()}>Send</button>
         </form>
-
   </div>
 </div>
 

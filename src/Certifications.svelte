@@ -29,6 +29,10 @@
             name: "AWS Certified Cloud Practitioner",
             link: "https://www.credly.com/badges/726fc5d4-c2b3-494a-b135-be48817d1bee/public_url",
             img: "img/certs/aws_practitioner.png",
+        },
+        {
+            name: "ITIL 4 Foundation",
+            img: "img/certs/ITIL.png",
         }
     ];
 
@@ -51,7 +55,7 @@
     {#each certifications as cert}
       <div on:mouseenter={handleHover} on:mouseleave={handleHoverEnd} class="cert-card">
         <img class="cert-img" src={cert.img} alt={cert.name}/>
-        {#if isHovered}
+        {#if isHovered && cert.link}
           <a class="cert-overlay" href={cert.link} target="_blank">View Certificate</a>
         {/if}
 
