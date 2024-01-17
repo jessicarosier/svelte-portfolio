@@ -1,5 +1,5 @@
 <script>
-    import {fade, scale} from "svelte/transition";
+    import {fade, scale, slide, draw} from 'svelte/transition';
 
     let activeIndex = 0;
     const projects = [
@@ -73,11 +73,7 @@
       <span class="material-icons">arrow_back_ios</span>
     </button>
     {#key activeIndex}
-      {#if handlePrev}
-        <img transition:scale={{duration: 500}} src="{projects[activeIndex].img}" alt="{projects[activeIndex].alt}">
-      {:else}
-        <img transition:scale={{duration: 500}} src="{projects[activeIndex].img}" alt="{projects[activeIndex].alt}">
-      {/if}
+        <img transition:fade={{duration: 500, delay: 0}} src="{projects[activeIndex].img}" alt="{projects[activeIndex].alt}">
     {/key}
     <button on:click={handleNext}>
       <span class="material-icons">arrow_forward_ios</span>
