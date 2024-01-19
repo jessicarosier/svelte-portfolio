@@ -42,6 +42,14 @@
             img: "img/preview/ducklister-mbp.jpeg",
             alt: "screenshot of ducklister",
             github: "https://github.com/Genesis-Luis-Jessica-Adlister/ducklister",
+        },
+        {
+            name: "Age Calculator",
+            description: "This is a Frontend Mentor challenge I completed using HTML, CSS, and JavaScript. The app takes a user's birthday and calculates their age in years, months, and days.",
+            img: "img/preview/age-calculator-mbp.jpeg",
+            alt: "screenshot of age calculator",
+            github: "https://github.com/jessicarosier/Frontend-Mentor-Projects/tree/main/age-calc-app",
+            liveSite: "https://age-calculator.jessicarosier.com",
         }
     ];
 
