@@ -27,14 +27,6 @@
             github: "https://github.com/jessicarosier/weather-map",
             liveSite: "https://weather-map.jessicarosier.com",
         },
-        {
-            name: "Coffee Project",
-            description: "This is a simple website demonstrating the use of HTML, CSS,and DOM manipulation with JavaScript. The website is a single page that displays information about coffee. Users can search for coffee by name, or roast type and add new coffee to the page. Local storage is used to make the newly added coffee persist on the page.",
-            img: "img/preview/coffee-mbp.jpeg",
-            alt: "screenshot of coffee project",
-            github: "https://github.com/jessica-nani-coffee-project/coffee-project/tree/main",
-            liveSite: "https://coffee.jessicarosier.com"
-        },
 
         {
             name: "Ducklister",
