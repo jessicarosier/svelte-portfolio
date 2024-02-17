@@ -10,6 +10,7 @@
             alt: "screenshot of mapshare",
             github: "https://github.com/Mapstone-Capstone/Mapstone",
             liveSite: "https://map-share.net",
+            tech: "Java, Spring Boot, Thymeleaf, MySQL, JavaScript, HTML, CSS, Bootstrap, Mapbox API, FileStack API"
         },
         {
             name: "Favorite Movies App",
@@ -17,7 +18,8 @@
             img: "img/preview/movies-mbp.jpeg",
             alt: "screenshot of movies app",
             github: "https://github.com/jessicarosier/favorite-movies-app",
-            liveSite: "https://movies-app.jessicarosier.com"
+            liveSite: "https://movies-app.jessicarosier.com",
+            tech: "HTML, CSS, JavaScript, Bootstrap, JSON Server, TMDB API"
         },
         {
             name: "Weather Map",
@@ -26,6 +28,7 @@
             alt: "screenshot of weather app",
             github: "https://github.com/jessicarosier/weather-map",
             liveSite: "https://weather-map.jessicarosier.com",
+            tech: "HTML, CSS, JavaScript, MapBox API, OpenWeatherMap API"
         },
 
         {
@@ -34,6 +37,7 @@
             img: "img/preview/ducklister-mbp.jpeg",
             alt: "screenshot of ducklister",
             github: "https://github.com/Genesis-Luis-Jessica-Adlister/ducklister",
+            tech: "Java, MySQL, JavaScript, HTML, CSS, Bootstrap"
         },
         {
             name: "Age Calculator",
@@ -42,6 +46,7 @@
             alt: "screenshot of age calculator",
             github: "https://github.com/jessicarosier/Frontend-Mentor-Projects/tree/main/age-calc-app",
             liveSite: "https://age-calculator.jessicarosier.com",
+            tech: "HTML, CSS, JavaScript"
         }
     ];
 

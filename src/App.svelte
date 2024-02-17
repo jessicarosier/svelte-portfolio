@@ -32,6 +32,16 @@
         isAboutMeActive = false;
     }
 
+    let konamiCode = "ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightbaEnter";
+    let secretCode = "";
+    window.addEventListener("keyup", (e) => {
+        e.preventDefault();
+        let code = e.key;
+        secretCode += code;
+        if (secretCode.includes(konamiCode)) {
+           alert("You have unlocked the secret code!");
+        }
+    });
 
 </script>
 
