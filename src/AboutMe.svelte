@@ -8,7 +8,7 @@
 
   <div class="d-flex flex-column align-items-center">
     <div class="image-wrapper d-inline-block overflow-hidden object-fit-cover">
-      <img class="w-100" src="img/GOAT.JPG"
+      <img class="w-100" src="img/jess1.jpeg"
            alt="Jessica Rosier">
     </div>
   </div>
