@@ -22,12 +22,12 @@
 
 <div class="about-me-container d-flex flex-column flex-xl-row justify-content-center align-items-center">
 
-  <div class="d-flex flex-column align-items-center">
-    <div class="headshot-wrapper d-inline-block overflow-hidden object-fit-cover">
-      <img class="w-100" src="img/GOAT.JPG"
-           alt="professional-headshot">
-    </div>
-  </div>
+<!--  <div class="d-flex flex-column align-items-center">-->
+<!--    <div class="headshot-wrapper d-inline-block overflow-hidden object-fit-cover">-->
+<!--      <img class="w-100" src="img/GOAT.JPG"-->
+<!--           alt="professional-headshot">-->
+<!--    </div>-->
+<!--  </div>-->
 
   <div class="d-flex flex-column align-items-center aboutMeText">
     <span> Hi <span class="wave">👋🏼</span>, I'm</span>
